@@ -1,7 +1,12 @@
+import React from 'react';
+import './CreateTodoButton.css';
+
 function CreateTodoButton(){
     return(
-      <button>
-        Crear Todo
+      <button 
+        className="todoButton"
+        >
+        +
       </button>
     );
 }
