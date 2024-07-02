@@ -1,10 +1,11 @@
-import { TodoCounter } from './TodoCounter';
-import { TodoSearch } from './TodoSearch';
-import { TodoList } from './TodoList';
-import { TodoItem } from './TodoItem';
-import { CreateTodoButton } from './CreateTodoButton';
+import { TodoCounter } from '../TodoCounter';
+import { TodoSearch } from '../TodoSearch';
+import { TodoList } from '../TodoList';
+import { TodoItem } from '../TodoItem';
+import { CreateTodoButton } from '../CreateTodoButton';
 // import './App.css';
 import React from 'react';
+import { useLocalStorage } from './useLocalStorage';
 
 // const defoult = [
 //   {text: "LLorar con la LLorona", completed: false},
@@ -15,31 +16,6 @@ import React from 'react';
 
 // localStorage.setItem('TODOS_V1', defoult);
 // localStorage.removeItem('TODOS_V1');
-
-function useLocalStorage(itemName, inicialValue){
-
-  const localStorageItem = localStorage.getItem(itemName);
-  let parsedItems;
-
-  if (!localStorageItem) {
-    localStorage.setItem(itemName, JSON.stringify(inicialValue));
-    parsedItems = inicialValue;
-
-  }else{
-    parsedItems = JSON.parse(localStorageItem);
-  }
-
-  const [item, setItem] = React.useState(parsedItems);
-
-  const saveItem = (newItems) => {
-    localStorage.setItem(itemName, JSON.stringify(newItems));
-
-    setItem(newItems);
-  }
-
-  return [item,saveItem];
-
-}
 
 function App() {
  
