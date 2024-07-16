@@ -5,11 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-image: url('039a68a4c2cc9437c2f41fd10a2a7d89.jpg');
+  background-image: url('/src/assets/img/wallpaper-engine.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   color: #FFFFFF;
-  background-attachment: fixed; */
+  background-attachment: fixed; 
   
 }
 
