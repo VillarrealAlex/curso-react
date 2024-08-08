@@ -3,7 +3,10 @@
 function TodosError(){
 
     return(
-      <p>error al cargar toodos...</p>
+        <div className="error-icon">⚠️
+            Lo sentimos. 
+            Ocurrió un error al cargar el contenido
+        </div>
     );
 }
 
