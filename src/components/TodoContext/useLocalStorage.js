@@ -1,6 +1,17 @@
 import React from "react";
 
 function useLocalStorage(itemName, inicialValue){
+// const defoultTodos = [
+//   {text: "LLorar con la LLorona", completed: false},
+//   {text: "Completar curso de React.js", completed: false},
+//   {text: "Cortar cebolla", completed: true},
+//   {text: "Tomar agua", completed: true}
+// ]
+
+// localStorage.setItem('TODOS_V1', JSON.stringify(defoultTodos));
+// localStorage.removeItem('TODOS_V1');
+
+
   const [item, setItem] = React.useState(inicialValue);
 
   const [loading, setLoading] = React.useState(true);
