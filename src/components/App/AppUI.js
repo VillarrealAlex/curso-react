@@ -8,51 +8,49 @@ import { TodosError } from '../TodosError/TodosError';
 import { EmptyTodos } from '../EmptyTodos/EmptyTodos';
 import React from 'react';
 import { TodoContext } from '../TodoContext/TodoContext';
+import { Modal } from '../Modal/Modal';
 
-function APPUI({
-  // todoCompleted,
-  // totalTodos,
-  // searchValue,
-  // setSearchValue,
-  // searchedTodos,
-  // completeTodo,
-  // deleteTodo,
-  // loading,
-  // error
-}) {
+function APPUI() {
+  const {
+    searchedTodos,
+    completeTodo,
+    deleteTodo,
+    loading,
+    error,
+    openModal, 
+    setOpenModal
+
+  } = React.useContext(TodoContext);
+
+
   return (
-    <React.Fragment>
-      
+    <>
       <TodoCounter />
-      <TodoSearch  />
+      <TodoSearch />
 
-      <TodoContext.Consumer>
-        {({
-            searchedTodos,
-            completeTodo,
-            deleteTodo,
-            loading,
-            error
-        }) => (
-          <TodoList>
-            {loading && <TodosLoading /> }
-            {error && <TodosError />}
-            { ( !loading && searchedTodos.length === 0   ) && <EmptyTodos /> }
+      <TodoList>
+        {loading && <TodosLoading />}
+        {error && <TodosError />}
+        {!loading && searchedTodos.length === 0 && <EmptyTodos />}
 
-            {searchedTodos.map((todo) => (
-              <TodoItem
-                key={todo.text}
-                text={todo.text}
-                completed={todo.completed}
-                onCompleted={() => completeTodo(todo.text)}
-                onDeleted={() => deleteTodo(todo.text)}
-              />
-            ))}
-        </TodoList>
-        )}
-      </TodoContext.Consumer>
+        {searchedTodos.map((todo) => (
+          <TodoItem
+            key={todo.text}
+            text={todo.text}
+            completed={todo.completed}
+            onCompleted={() => completeTodo(todo.text)}
+            onDeleted={() => deleteTodo(todo.text)}
+          />
+        ))}
+      </TodoList>
+
       <CreateTodoButton />
-    </React.Fragment>
+
+      {openModal && (
+        <Modal>form crear Todo</Modal>
+      )}
+
+    </>
   );
 }
 
