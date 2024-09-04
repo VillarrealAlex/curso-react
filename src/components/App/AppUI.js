@@ -7,8 +7,10 @@ import { TodosLoading } from '../TodosLoading/TodosLoading';
 import { TodosError } from '../TodosError/TodosError';
 import { EmptyTodos } from '../EmptyTodos/EmptyTodos';
 import React from 'react';
+import { TodoForm } from '../TodoForm/TodoForm';
 import { TodoContext } from '../TodoContext/TodoContext';
 import { Modal } from '../Modal/Modal';
+
 
 function APPUI() {
   const {
@@ -44,10 +46,14 @@ function APPUI() {
         ))}
       </TodoList>
 
-      <CreateTodoButton />
+      <CreateTodoButton 
+        setOpenModal = {setOpenModal}
+      />
 
       {openModal && (
-        <Modal>form crear Todo</Modal>
+        <Modal>
+          <TodoForm />
+        </Modal>
       )}
 
     </>
