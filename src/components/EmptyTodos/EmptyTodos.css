@@ -1,0 +1,34 @@
+
+.no-content-container {
+    text-align: center;
+    /* background-color: #ffffff; */
+    padding: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.no-content-icon {
+    font-size: 50px;
+    animation: float 2s infinite;
+    color: #ff6f61;
+}
+
+.no-content-message {
+    font-size: 25px;
+    /* color: #333333; */
+    font-weight: bolder;
+    font-family: cursive;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
