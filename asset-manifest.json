@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/VillarrealAlex/curso-react/static/css/main.411aa486.css",
+    "main.js": "/VillarrealAlex/curso-react/static/js/main.a7c4b471.js",
+    "static/media/wallpaper-engine.jpg": "/VillarrealAlex/curso-react/static/media/wallpaper-engine.45c4b170c62162cc3758.jpg",
+    "index.html": "/VillarrealAlex/curso-react/index.html",
+    "main.411aa486.css.map": "/VillarrealAlex/curso-react/static/css/main.411aa486.css.map",
+    "main.a7c4b471.js.map": "/VillarrealAlex/curso-react/static/js/main.a7c4b471.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.411aa486.css",
+    "static/js/main.a7c4b471.js"
+  ]
+}
