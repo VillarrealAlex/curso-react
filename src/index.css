@@ -5,10 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('/src/assets/img/wallpaper-engine.jpg');
+  /* background-image: url('/src/assets/img/wallpaper-engine.jpg'); */
   background-repeat: no-repeat;
   background-size: cover;
-  color: #FFFFFF;
+  /* color: #FFFFFF; */
   background-attachment: fixed; 
   
 }
@@ -22,4 +22,13 @@ code {
   margin: 0 24px;
   position: relative;
   min-height: 100vh
+}
+
+#contenido-principal {
+  display: flex;
+  justify-content: center;
+}
+
+#contenido {
+  width: 80%;
 }

@@ -27,35 +27,40 @@ function APPUI() {
 
   return (
     <>
-      <TodoCounter />
-      <TodoSearch />
+      <div id='contenido-principal'>
+        <div id='contenido'>
+      
+          <TodoCounter />
+          <TodoSearch />
 
-      <TodoList>
-        {loading && <TodosLoading />}
-        {error && <TodosError />}
-        {!loading && searchedTodos.length === 0 && <EmptyTodos />}
+          <TodoList>
+            {loading && <TodosLoading />}
+            {error && <TodosError />}
+            {!loading && searchedTodos.length === 0 && <EmptyTodos />}
 
-        {searchedTodos.map((todo) => (
-          <TodoItem
-            key={todo.text}
-            text={todo.text}
-            completed={todo.completed}
-            onCompleted={() => completeTodo(todo.text)}
-            onDeleted={() => deleteTodo(todo.text)}
+            {searchedTodos.map((todo) => (
+              <TodoItem
+                key={todo.text}
+                text={todo.text}
+                completed={todo.completed}
+                onCompleted={() => completeTodo(todo.text)}
+                onDeleted={() => deleteTodo(todo.text)}
+              />
+            ))}
+          </TodoList>
+
+          <CreateTodoButton 
+            setOpenModal = {setOpenModal}
           />
-        ))}
-      </TodoList>
 
-      <CreateTodoButton 
-        setOpenModal = {setOpenModal}
-      />
-
-      {openModal && (
-        <Modal>
-          <TodoForm />
-        </Modal>
-      )}
-
+          {openModal && (
+            <Modal>
+              <TodoForm />
+            </Modal>
+          )}
+        </div>
+      </div>
+      
     </>
   );
 }
